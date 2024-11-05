@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Hitung Luas Ruang Bangun</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
@@ -22,13 +22,31 @@
             <input type="text" id="LB">
         </form>
 
+        <div class="hsl" id="hsl">Hasil</div>
+       
       </div>
       <div class="cardfooter">
-        <button class="btn1">Hitung</button>
+        <button class="btn1" onclick="hitung()">Hitung</button>
       </div>
     </div>
   </div>
 
+<script>
+  function hitung(){
+  var pj=document.getElementById("PJ").value
+  var lb=document.getElementById("LB").value
+  var luas=pj*lb
+  var res="Hitung Luas Persegi<br>Nilai Panjang"+pj+",dan lebarnya"+lb+"menjadi;<br>Luas=Panjang X Lebar<br>Luas="+pj+"X "+lb+"<br>Luas="+luas
+  var kll=2*(pj+lb)
+  var pjlb = parseInt(pj) + parseInt(lb)
+  res +="<br><br>Keliling Persegi<br>Keliling = 2 X (Panjang+Lebar)"
+  res +="<br>Keliling = 2 X ("+pj+"+"+lb+")"
+  res +="<br>Keliling = 2 X "+pjlb
+  res +="<br>Keliling = "+ kll
+
+  document.getElementById("hsl").innerHTML=res
+  }
+</script>
 
 </body>
 </html>
